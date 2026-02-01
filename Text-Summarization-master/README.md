@@ -1,68 +1,100 @@
-# Text-Summarization Using Deep Learning
-Jupyter notebooks for text summarization using Deep Learning techniques
+# Deep Learning–Based Abstractive Text Summarization
 
-#### -- Project Status: Active
+## 📌 Project Overview
+This project implements an **abstractive text summarization system** using **deep learning–based sequence modeling**. The model is built using an **LSTM Encoder–Decoder architecture**, enabling it to generate concise summaries by learning semantic representations of long text documents.
 
-## Introduction
-The purpose of this project is to produce a model for Abstractive Text Summarization, starting with the RNN encoder-decoder as the baseline model. From there, we come across the effectiveness of different methods for attention in abstractive summarization. These methods try to first understand the text and then rephrase it in a shorter manner, using possibly different words. For perfect abstractive summary, the model has to first truly understand the document and then try to express that understanding in short possibly using new words and phrases. We have used the concept of an encoder-decoder recurrent neural network with LSTM units and attention to generate summary from a given text.
+The project is designed and implemented as a **Deep Learning–driven NLP application**, with primary emphasis on neural network modeling rather than rule-based or extractive NLP techniques. It was developed as a hands-on learning project by a **3rd year Computer Science Engineering student** to gain practical experience relevant to **Machine Learning, Deep Learning, and AI internships**.
 
-### Methods Used
-* Word Embeddings using GloVe (Global Vectors)
-* Encoder-decoder using RNN(Recurrent Neural Network)
+---
 
-### Technologies
-* Python
-* Keras Library
-* TensorFlow
-* Jupyter
-* etc.
+## 🎯 Problem Statement
+Large textual documents contain valuable information but are difficult to process quickly. The objective of this project is to automatically generate **human-like summaries** that capture the core meaning of the input text while reducing length and redundancy.
 
-## Description
-In this project we have used a [sample dataset of news articles (CNN , Daily Mail)](https://github.com/JafferWilson/Process-Data-of-CNN-DailyMail). Currently we are facing a problem in implementing the pointer-generator network.
+---
 
-## Architecture
-![Architecture](./resources/images/model.jpg)
+## 🧠 Technical Approach
+The system follows an **end-to-end deep learning pipeline**:
 
-## Learning Rate Configuration
-![Learning Rate](./resources/images/CLR.png)
+1. **Text Preprocessing (NLP)**
+   - Tokenization and cleaning
+   - Vocabulary creation
+   - Sequence padding and encoding
 
-`CyclicLR(mode='triangular2', base_lr= 0.2, max_lr= 0.001,
-                          step_size= (len(padded_sorted_texts)*0.9/BATCH_SIZE) * 2)`
+2. **Model Architecture (Deep Learning Core)**
+   - Encoder–Decoder sequence-to-sequence model
+   - LSTM layers for handling long-term dependencies
+   - Learned word embeddings and context vectors
+   - Backpropagation-based training
 
-## Word Embeddings
-![ConceptNet Numberbatch](./resources/images/conceptnet-numberbatch.png)
+3. **Inference**
+   - Word-by-word summary generation
+   - Greedy decoding for sequence prediction
 
-* ConceptNet Numbernatch word embeddings were used to encode the word meanings
+> While NLP preprocessing enables structured input, the **core intelligence and learning capability lies in the deep learning model**, which learns how to summarize text in an abstractive manner.
 
-## Getting Started
+---
 
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept on the local storage at the location ~/Text-Summarization/Original_data/cnn/stories
+## 🛠️ Tech Stack
+- **Language:** Python  
+- **Deep Learning Framework:** TensorFlow / Keras  
+- **Libraries:** NumPy, Pandas, NLTK  
+- **Core Concepts:**
+  - Deep Learning
+  - Sequence-to-Sequence Modeling
+  - Recurrent Neural Networks (LSTM)
+  - Natural Language Processing
 
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. Installation steps:
-  Use `single backticks` to call out code or a command within a sentence.
-  ```
-  To format code or text into its own distinct block, use triple backticks
-  example:
-    git status
-    git commit -m
-  ```
+---
 
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
-* [Blog Post](link)
+## 📂 Project Structure
+Text-Summarization/
+│
+├── data/ # Dataset and text samples
+├── notebooks/ # Model development and experimentation
+├── preprocessing.py # NLP preprocessing pipeline
+├── train.py # Model training logic
+├── inference.py # Summary generation
+├── model/ # Saved models and weights
+└── README.md
 
 
-## Contributing Team Members
+---
 
-**Team Lead (Contacts) : [Nikhil Gupta](https://github.com/nikhilcss97)**
+## 📈 Results
+The trained model is able to generate **coherent and concise summaries** that preserve the semantic meaning of the original text. Although the model does not use transformer-based architectures, it demonstrates effective abstractive summarization using classical deep learning techniques.
 
-#### Other Members:
+---
 
-[Blair Fernandes](https://github.com/blair49), [Asjad Baig]
+## 💡 Key Learnings
+- Designing and training **deep learning sequence models**
+- Understanding encoder–decoder architectures
+- Applying NLP preprocessing for neural networks
+- Handling long text sequences and memory constraints
+- Structuring real-world deep learning projects
 
-## Contact
-* Feel free to contact me on nikhil.css97@gmail.com with any questions or if you are interested in contributing!
+---
+
+## 🔮 Future Enhancements
+- Integrate **Attention Mechanism**
+- Transition to **Transformer-based models** (T5, BART, PEGASUS)
+- Evaluate performance using **ROUGE metrics**
+- Deploy as an interactive **web application**
+
+---
+
+## 👩‍💻 About the Developer
+I am a **3rd year Computer Science Engineering student** with a strong interest in:
+- Deep Learning
+- Natural Language Processing
+- Machine Learning Systems
+- AI-driven applications
+
+I actively build deep learning projects to strengthen my fundamentals and prepare for **AI/ML and Software Engineering internships**.
+
+📫 **Open to internship opportunities and technical collaborations**
+
+---
+
+## ⭐ Acknowledgement
+This project is inspired by open-source implementations and academic resources in NLP and deep learning. It has been implemented and adapted as a **learning-focused, hands-on deep learning project**.
+
